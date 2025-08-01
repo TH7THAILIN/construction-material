@@ -1,0 +1,21 @@
+/* Import font styles */
+@import "./css/euclid-circular-a-font.css";
+
+/* Import your custom component styles */
+@import "./css/style.css";
+@import "./css/async-gallery.css";
+@import "./css/swiper.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-euclid-circular-a font-normal text-base text-dark-3 relative z-1;
+  }
+}
