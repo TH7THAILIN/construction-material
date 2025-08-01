@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Vercel optimizations
+  serverExternalPackages: ['@prisma/client'],
+  
   // Turbopack configuration (moved from experimental.turbo)
   turbopack: {
     rules: {
@@ -10,6 +13,21 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  
+  // Image optimization for Vercel
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+      },
+    ],
+  },
+  
   // Optimize for production
   webpack: (config, { isServer, dev }) => {
     // Production optimizations
