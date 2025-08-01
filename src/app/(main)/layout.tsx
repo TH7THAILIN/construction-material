@@ -1,4 +1,3 @@
-import "./globals.css";
 import { NextAuthProvider } from "@/components/layout/AuthProvider";
 import { ReduxProvider } from "@/store/redux/provider";
 import { CartModalProvider } from "@/hooks/context/CartSidebarModalContext";

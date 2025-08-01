@@ -17,18 +17,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  
-  // Optimize for production
-  webpack: (config, { isServer, dev }) => {
-    // Production optimizations
-    if (!dev && isServer) {
-      // Prisma optimization for serverless
-      config.externals.push({
-        '@prisma/client': '@prisma/client',
-      });
-    }
-    return config;
-  },
 };
 
 export default nextConfig;
