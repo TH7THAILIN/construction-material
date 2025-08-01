@@ -4,16 +4,6 @@ const nextConfig: NextConfig = {
   // Vercel optimizations
   serverExternalPackages: ['@prisma/client'],
   
-  // Turbopack configuration (moved from experimental.turbo)
-  turbopack: {
-    rules: {
-      "*.svg": {
-        loaders: ["@svgr/webpack"],
-        as: "*.js",
-      },
-    },
-  },
-  
   // Image optimization for Vercel
   images: {
     remotePatterns: [
