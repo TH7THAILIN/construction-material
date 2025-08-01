@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { Product } from "@/types/product";
 
 type InitialState = {
@@ -13,6 +13,9 @@ const initialState = {
     discountedPrice: 0,
     img: "",
     id: 0,
+    image: "",
+    category: "",
+    rating: 0,
     images: [],
     imgs: { thumbnails: [], previews: [] },
   } as Product,

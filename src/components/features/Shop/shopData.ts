@@ -6,6 +6,9 @@ const shopData: Product[] = [
     price: 59.0,
     discountedPrice: 29.0,
     id: 1,
+    image: "/images/products/product-1-sm-1.png",
+    category: "Gaming",
+    rating: 4,
     imgs: {
       thumbnails: [
         "/images/products/product-1-sm-1.png",
@@ -23,6 +26,9 @@ const shopData: Product[] = [
     price: 899.0,
     discountedPrice: 99.0,
     id: 2,
+    image: "/images/products/product-2-sm-1.png",
+    category: "Electronics",
+    rating: 5,
     imgs: {
       thumbnails: [
         "/images/products/product-2-sm-1.png",
@@ -40,6 +46,9 @@ const shopData: Product[] = [
     price: 59.0,
     discountedPrice: 29.0,
     id: 3,
+    image: "/images/products/product-3-sm-1.png",
+    category: "Computers",
+    rating: 4,
     imgs: {
       thumbnails: [
         "/images/products/product-3-sm-1.png",
@@ -57,6 +66,9 @@ const shopData: Product[] = [
     price: 59.0,
     discountedPrice: 29.0,
     id: 4,
+    image: "/images/products/product-4-sm-1.png",
+    category: "Computers",
+    rating: 5,
     imgs: {
       thumbnails: [
         "/images/products/product-4-sm-1.png",
@@ -74,6 +86,9 @@ const shopData: Product[] = [
     price: 99.0,
     discountedPrice: 29.0,
     id: 5,
+    image: "/images/products/product-5-sm-1.png",
+    category: "Wearables",
+    rating: 4,
     imgs: {
       thumbnails: [
         "/images/products/product-5-sm-1.png",
@@ -91,6 +106,9 @@ const shopData: Product[] = [
     price: 59.0,
     discountedPrice: 29.0,
     id: 6,
+    image: "/images/products/product-6-sm-1.png",
+    category: "Accessories",
+    rating: 4,
     imgs: {
       thumbnails: [
         "/images/products/product-6-sm-1.png",
@@ -108,6 +126,9 @@ const shopData: Product[] = [
     price: 59.0,
     discountedPrice: 29.0,
     id: 7,
+    image: "/images/products/product-7-sm-1.png",
+    category: "Tablets",
+    rating: 5,
     imgs: {
       thumbnails: [
         "/images/products/product-7-sm-1.png",
@@ -125,6 +146,9 @@ const shopData: Product[] = [
     price: 59.0,
     discountedPrice: 29.0,
     id: 8,
+    image: "/images/products/product-8-sm-1.png",
+    category: "Networking",
+    rating: 4,
     imgs: {
       thumbnails: [
         "/images/products/product-8-sm-1.png",

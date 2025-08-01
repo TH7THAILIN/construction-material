@@ -11,6 +11,8 @@ type CartItem = {
   price: number;
   discountedPrice: number;
   quantity: number;
+  image?: string;
+  category?: string;
   imgs?: {
     thumbnails: string[];
     previews: string[];

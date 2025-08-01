@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Breadcrumb from "@/ui/Common/Breadcrumb";
 import Image from "next/image";
 import Newsletter from "@/ui/Common/Newsletter";
@@ -75,15 +75,30 @@ const ShopDetails = () => {
 
   const colors = ["red", "blue", "orange", "pink", "purple"];
 
-  const alreadyExist = localStorage.getItem("productDetails");
   const productFromStorage = useAppSelector(
     (state) => state.productDetailsReducer.value
   );
 
-  const product = alreadyExist ? JSON.parse(alreadyExist) : productFromStorage;
+  // Client-side localStorage access
+  const [product, setProduct] = useState(productFromStorage);
 
   useEffect(() => {
-    localStorage.setItem("productDetails", JSON.stringify(product));
+    // Only access localStorage on client side
+    if (typeof window !== 'undefined') {
+      const alreadyExist = localStorage.getItem("productDetails");
+      if (alreadyExist) {
+        setProduct(JSON.parse(alreadyExist));
+      } else {
+        setProduct(productFromStorage);
+      }
+    }
+  }, [productFromStorage]);
+
+  useEffect(() => {
+    // Save to localStorage when product changes
+    if (typeof window !== 'undefined' && product) {
+      localStorage.setItem("productDetails", JSON.stringify(product));
+    }
   }, [product]);
 
   // pass the product here when you get the real data.
@@ -130,7 +145,7 @@ const ShopDetails = () => {
                       </button>
 
                       <Image
-                        src={product.imgs?.previews[previewImg]}
+                        src={product.imgs?.previews[previewImg] || '/placeholder-image.jpg'}
                         alt="products-details"
                         width={400}
                         height={400}

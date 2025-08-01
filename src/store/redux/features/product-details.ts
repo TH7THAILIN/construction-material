@@ -14,6 +14,9 @@ const initialState = {
     img: "",
     images: [],
     id: 0,
+    image: "",
+    category: "",
+    rating: 0,
     imgs: { thumbnails: [], previews: [] },
   },
 } as InitialState;
