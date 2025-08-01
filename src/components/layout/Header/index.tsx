@@ -47,6 +47,28 @@ const Header = () => {
     { label: "Tablet", value: "7" },
   ];
 
+  // Sample product suggestions - in a real app, this would come from an API
+  const productSuggestions = [
+    "Construction Tools",
+    "Building Materials", 
+    "Safety Equipment",
+    "Power Tools",
+    "Hand Tools",
+    "Concrete Mixer",
+    "Steel Reinforcement",
+    "Welding Equipment"
+  ];
+
+  // Simulate loading suggestions from API
+  const loadSuggestions = async (query: string): Promise<string[]> => {
+    // Simulate API delay
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    return productSuggestions.filter(suggestion =>
+      suggestion.toLowerCase().includes(query.toLowerCase())
+    );
+  };
+
   return (
     <header
       className={`fixed left-0 top-0 w-full z-9999 bg-white transition-all ease-in-out duration-300 ${
@@ -78,6 +100,8 @@ const Header = () => {
                   <SearchBox 
                     placeholder="I am shopping for..."
                     className="max-w-[333px] sm:min-w-[333px] w-full"
+                    showSuggestions={true}
+                    onSuggestionsLoad={loadSuggestions}
                   />
                 </div>
               </form>

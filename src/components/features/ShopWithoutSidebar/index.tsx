@@ -1,21 +1,32 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Breadcrumb from "@/ui/Common/Breadcrumb";
-
+import ProductSkeleton from "@/ui/Common/ProductSkeleton";
 import SingleGridItem from "../Shop/SingleGridItem";
 import SingleListItem from "../Shop/SingleListItem";
 import CustomSelect from "../ShopWithSidebar/CustomSelect";
-
 import shopData from "../Shop/shopData";
 
 const ShopWithoutSidebar = () => {
   const [productStyle, setProductStyle] = useState("grid");
+  const [isLoading, setIsLoading] = useState(true);
 
   const options = [
     { label: "Latest Products", value: "0" },
     { label: "Best Selling", value: "1" },
     { label: "Old Products", value: "2" },
   ];
+
+  useEffect(() => {
+    // Simulate data loading
+    const loadData = async () => {
+      setIsLoading(true);
+      await new Promise(resolve => setTimeout(resolve, 1200));
+      setIsLoading(false);
+    };
+    
+    loadData();
+  }, []);
 
   return (
     <>
@@ -129,11 +140,20 @@ const ShopWithoutSidebar = () => {
                     : "flex flex-col gap-7.5"
                 }`}
               >
-                {shopData.map((item, key) =>
-                  productStyle === "grid" ? (
-                    <SingleGridItem item={item} key={key} />
-                  ) : (
-                    <SingleListItem item={item} key={key} />
+                {isLoading ? (
+                  <div className="col-span-full">
+                    <ProductSkeleton 
+                      variant={productStyle as "grid" | "list"} 
+                      count={productStyle === "grid" ? 12 : 8}
+                    />
+                  </div>
+                ) : (
+                  shopData.map((item, key) =>
+                    productStyle === "grid" ? (
+                      <SingleGridItem item={item} key={key} />
+                    ) : (
+                      <SingleListItem item={item} key={key} />
+                    )
                   )
                 )}
               </div>

@@ -7,6 +7,8 @@ import GenderDropdown from "./GenderDropdown";
 import SizeDropdown from "./SizeDropdown";
 import ColorsDropdwon from "./ColorsDropdwon";
 import PriceDropdown from "./PriceDropdown";
+import ProductSkeleton from "@/ui/Common/ProductSkeleton";
+import LoadingSpinner from "@/ui/Common/LoadingSpinner";
 import shopData from "../Shop/shopData";
 import SingleGridItem from "../Shop/SingleGridItem";
 import SingleListItem from "../Shop/SingleListItem";
@@ -15,6 +17,8 @@ const ShopWithSidebar = () => {
   const [productStyle, setProductStyle] = useState("grid");
   const [productSidebar, setProductSidebar] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isFilterLoading, setIsFilterLoading] = useState(false);
 
   const handleStickyMenu = () => {
     if (window.scrollY >= 80) {
@@ -92,10 +96,29 @@ const ShopWithSidebar = () => {
       document.addEventListener("mousedown", handleClickOutside);
     }
 
+    // Simulate initial data loading
+    const loadInitialData = async () => {
+      setIsLoading(true);
+      // Simulate API call delay
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      setIsLoading(false);
+    };
+    
+    loadInitialData();
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleStickyMenu);
     };
-  });
+  }, [productSidebar]);
+
+  // Handle filter changes with loading
+  const handleFilterChange = async () => {
+    setIsFilterLoading(true);
+    // Simulate filter API call
+    await new Promise(resolve => setTimeout(resolve, 800));
+    setIsFilterLoading(false);
+  };
 
   return (
     <>
@@ -157,19 +180,29 @@ const ShopWithSidebar = () => {
                   </div>
 
                   {/* <!-- category box --> */}
-                  <CategoryDropdown categories={categories} />
+                  <div onClick={handleFilterChange}>
+                    <CategoryDropdown categories={categories} />
+                  </div>
 
                   {/* <!-- gender box --> */}
-                  <GenderDropdown genders={genders} />
+                  <div onClick={handleFilterChange}>
+                    <GenderDropdown genders={genders} />
+                  </div>
 
                   {/* // <!-- size box --> */}
-                  <SizeDropdown />
+                  <div onClick={handleFilterChange}>
+                    <SizeDropdown />
+                  </div>
 
                   {/* // <!-- color box --> */}
-                  <ColorsDropdwon />
+                  <div onClick={handleFilterChange}>
+                    <ColorsDropdwon />
+                  </div>
 
                   {/* // <!-- price range box --> */}
-                  <PriceDropdown />
+                  <div onClick={handleFilterChange}>
+                    <PriceDropdown />
+                  </div>
                 </div>
               </form>
             </div>
@@ -278,11 +311,20 @@ const ShopWithSidebar = () => {
                     : "flex flex-col gap-7.5"
                 }`}
               >
-                {shopData.map((item, key) =>
-                  productStyle === "grid" ? (
-                    <SingleGridItem item={item} key={key} />
-                  ) : (
-                    <SingleListItem item={item} key={key} />
+                {isLoading || isFilterLoading ? (
+                  <div className="col-span-full">
+                    <ProductSkeleton 
+                      variant={productStyle as "grid" | "list"} 
+                      count={productStyle === "grid" ? 9 : 6}
+                    />
+                  </div>
+                ) : (
+                  shopData.map((item, key) =>
+                    productStyle === "grid" ? (
+                      <SingleGridItem item={item} key={key} />
+                    ) : (
+                      <SingleListItem item={item} key={key} />
+                    )
                   )
                 )}
               </div>

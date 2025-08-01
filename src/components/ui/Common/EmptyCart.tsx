@@ -2,7 +2,15 @@ import React from "react";
 import Link from "next/link";
 import { useCartModalContext } from "@/hooks/context/CartSidebarModalContext";
 
-const EmptyCart = () => {
+interface EmptyCartProps {
+  isLoading?: boolean;
+  message?: string;
+}
+
+const EmptyCart: React.FC<EmptyCartProps> = ({ 
+  isLoading = false, 
+  message = "Your cart is empty!" 
+}) => {
   const { closeCartModal } = useCartModalContext();
 
   return (
@@ -38,12 +46,25 @@ const EmptyCart = () => {
         </svg>
       </div>
 
-      <p className="pb-6">Your cart is empty!</p>
+      {isLoading ? (
+        <div className="pb-6">
+          <div className="flex items-center justify-center space-x-2">
+            <div className="animate-spin h-5 w-5 border-2 border-blue border-t-transparent rounded-full"></div>
+            <span className="text-gray-6">Loading cart...</span>
+          </div>
+        </div>
+      ) : (
+        <p className="pb-6">{message}</p>
+      )}
 
       <Link
         onClick={() => closeCartModal()}
         href="/shop-with-sidebar"
-        className="w-full lg:w-10/12 mx-auto flex justify-center font-medium text-white bg-dark py-[13px] px-6 rounded-md ease-out duration-200 hover:bg-opacity-95"
+        className={`w-full lg:w-10/12 mx-auto flex justify-center font-medium py-[13px] px-6 rounded-md ease-out duration-200 ${
+          isLoading 
+            ? 'bg-gray-4 text-gray-6 cursor-not-allowed'
+            : 'text-white bg-dark hover:bg-opacity-95'
+        }`}
       >
         Continue Shopping
       </Link>
