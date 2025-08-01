@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "prisma generate && next build",
-    "build:prod": "prisma generate --no-engine && next build",
+    "build": "npm run prisma:generate && next build",
+    "build:prod": "npm run prisma:generate:prod && next build",
     "start": "next start",
     "lint": "next lint",
     "prisma:generate": "prisma generate",
