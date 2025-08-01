@@ -1,10 +1,10 @@
 /* Import font styles */
-@import "./css/euclid-circular-a-font.css";
+@import "../styles/css/euclid-circular-a-font.css";
 
 /* Import your custom component styles */
-@import "./css/style.css";
-@import "./css/async-gallery.css";
-@import "./css/swiper.css";
+@import "../styles/css/style.css";
+@import "../styles/css/async-gallery.css";
+@import "../styles/css/swiper.css";
 
 @tailwind base;
 @tailwind components;

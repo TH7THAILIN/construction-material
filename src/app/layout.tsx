@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { NextAuthProvider } from "./components/AuthProvider";
-import { ReduxProvider } from "./redux/provider";
-import { CartModalProvider } from "./context/CartSidebarModalContext";
-import { PreviewSliderProvider } from "./context/PreviewSliderContext";
-import { ModalProvider } from "./context/QuickViewModalContext";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import CartSidebarModal from "./components/Common/CartSidebarModal";
-import QuickViewModal from "./components/Common/QuickViewModal";
-import PreviewSlider from "./components/Common/PreviewSlider";
-import ScrollToTop from "./components/Common/ScrollToTop";
+import { NextAuthProvider } from "@/layout/AuthProvider";
+import { ReduxProvider } from "@/store/redux/provider";
+import { CartModalProvider } from "@/hooks/context/CartSidebarModalContext";
+import { PreviewSliderProvider } from "@/hooks/context/PreviewSliderContext";
+import { ModalProvider } from "@/hooks/context/QuickViewModalContext";
+import Header from "@/layout/Header";
+import Footer from "@/layout/Footer";
+import CartSidebarModal from "@/ui/Common/CartSidebarModal";
+import QuickViewModal from "@/ui/Common/QuickViewModal";
+import PreviewSlider from "@/ui/Common/PreviewSlider";
+import ScrollToTop from "@/ui/Common/ScrollToTop";
 
 const inter = Inter({ subsets: ["latin"] });
 
