@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../../../context/CartContext';
 
 // Define the product type to be used as props
 interface Product {
