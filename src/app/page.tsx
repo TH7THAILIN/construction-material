@@ -1,8 +1,5 @@
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/lib/prisma';
 import Image from 'next/image';
-
-// It's a good practice to instantiate PrismaClient once and reuse it.
-const prisma = new PrismaClient();
 
 // Define a type for our product for type safety
 interface Product {
@@ -18,7 +15,6 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <div className="border rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow duration-200">
       <div className="w-full h-48 bg-gray-200 rounded-md mb-4 flex items-center justify-center">
-        {/* Display image if available, otherwise show a placeholder */}
         {product.imageUrl ? (
           <Image
             src={product.imageUrl}
@@ -27,7 +23,7 @@ function ProductCard({ product }: { product: Product }) {
             height={192}
             className="w-full h-full object-cover rounded-md"
             style={{ objectFit: 'cover', borderRadius: '0.375rem' }}
-            unoptimized={true}
+            priority
           />
         ) : (
           <span className="text-gray-500">No Image</span>
@@ -40,7 +36,6 @@ function ProductCard({ product }: { product: Product }) {
   );
 }
 
-
 // Make the Home page an async function to use await for data fetching
 export default async function Home() {
   // Fetch products directly from the database
@@ -50,14 +45,12 @@ export default async function Home() {
     <main className="container mx-auto p-8">
       <h1 className="text-4xl font-extrabold text-center mb-10">Our Products</h1>
       
-      {/* Grid layout for the products */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {products.map((product: Product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
 
-      {/* Handle case where there are no products */}
       {products.length === 0 && (
         <p className="text-center text-gray-500 mt-10">
           No products found. Please add some products to the database.
