@@ -236,8 +236,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For support, email [dyrongrath@gmail.com] or create an issue in this repository.
+For support, email [vathailin.cha@gmail.com] or create an issue in this repository.
 
 ---
 
-**Built with ❤️ by [Dy-Rongrath](https://github.com/Dy-Rongrath)**
+**Built with ❤️ by [TH7THAILIN](https://github.com/TH7THAILIN)**
