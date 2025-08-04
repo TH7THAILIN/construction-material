@@ -160,6 +160,148 @@ const shopData: Product[] = [
       ],
     },
   },
+  {
+    title: "Rog strix g18 , 6/128GB",
+    reviews: 5,
+    price: 899.0,
+    discountedPrice: 99.0,
+    id: 2,
+    image: "/images/products/rog.png",
+    category: "Electronics",
+    rating: 5,
+    imgs: {
+      thumbnails: [
+        "/images/products/rog.png",
+        "/images/products/product-2-sm-2.png",
+      ],
+      previews: [
+        "/images/products/rog.png",
+        "/images/products/rog.png",
+      ],
+    },
+  },
+  {
+    title: "Mikrotik Router , 6/128GB",
+    reviews: 5,
+    price: 899.0,
+    discountedPrice: 99.0,
+    id: 2,
+    image: "/images/products/eawr.png",
+    category: "Electronics",
+    rating: 5,
+    imgs: {
+      thumbnails: [
+        "/images/products/eawr.png",
+        "/images/products/eawr.png",
+      ],
+      previews: [
+        "/images/products/eawr.png",
+        "/images/products/eawr.png",
+      ],
+    },
+  },
+  {
+    title: "apple watch 9 , 6/128GB",
+    reviews: 5,
+    price: 899.0,
+    discountedPrice: 99.0,
+    id: 2,
+    image: "/images/products/2232442432.png",
+    category: "Electronics",
+    rating: 5,
+    imgs: {
+      thumbnails: [
+        "/images/products/2232442432.png",
+        "/images/products/2232442432.png",
+      ],
+      previews: [
+        "/images/products/2232442432.png",
+        "/images/products/2232442432.png",
+      ],
+    },
+  },
+  {
+    title: "pixel 6 , 6/128GB",
+    reviews: 5,
+    price: 899.0,
+    discountedPrice: 99.0,
+    id: 2,
+    image: "/images/products/sfssf.png",
+    category: "Electronics",
+    rating: 5,
+    imgs: {
+      thumbnails: [
+        "/images/products/sfssf.png",
+        "/images/products/sfssf.png",
+      ],
+      previews: [
+        "/images/products/sfssf.png",
+        "/images/products/sfssf.png",
+      ],
+    },
+  },
+  {
+    title: "samsung note 22 ultra",
+    reviews: 5,
+    price: 899.0,
+    discountedPrice: 99.0,
+    id: 2,
+    image: "/images/products/24342.png",
+    category: "Electronics",
+    rating: 5,
+    imgs: {
+      thumbnails: [
+        "/images/products/24342.png",
+        "/images/products/24342.png",
+      ],
+      previews: [
+        "/images/products/24342.png",
+        "/images/products/24342.png",
+      ],
+    },
+  },
+  {
+    title: "samsung s22 ultra, 6/128GB",
+    reviews: 5,
+    price: 899.0,
+    discountedPrice: 99.0,
+    id: 2,
+    image: "/images/products/123.png",
+    category: "Electronics",
+    rating: 5,
+    imgs: {
+      thumbnails: [
+        "/images/products/123.png",
+        "/images/products/123.png",
+      ],
+      previews: [
+        "/images/products/123.png",
+        "/images/products/123.png",
+      ],
+    },
+  },
+  {
+    title: "iPhone 12 Pro max , 6/128GB",
+    reviews: 5,
+    price: 899.0,
+    discountedPrice: 99.0,
+    id: 2,
+    image: "/images/products/image1.png",
+    category: "Electronics",
+    rating: 5,
+    imgs: {
+      thumbnails: [
+        "/images/products/image1.png",
+        "/images/products/image1.png",
+      ],
+      previews: [
+        "/images/products/image1.png",
+        "/images/products/image1.png",
+      ],
+    },
+  },
+ 
+
 ];
 
 export default shopData;

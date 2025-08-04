@@ -32,7 +32,7 @@ const Footer = () => {
                     />
                   </svg>
                 </span>
-                685 Market Street,Las Vegas, LA 95820,United States.
+                Phnom Penh
               </li>
 
               <li>
@@ -61,7 +61,7 @@ const Footer = () => {
                       fill="#3C50E0"
                     />
                   </svg>
-                  (+099) 532-786-9843
+                  (+855) 96 767 3038
                 </a>
               </li>
 
@@ -81,7 +81,7 @@ const Footer = () => {
                       fill="#3C50E0"
                     />
                   </svg>
-                  support@example.com
+                  vathailin.cha@gmail.com
                 </a>
               </li>
             </ul>
@@ -265,15 +265,15 @@ const Footer = () => {
           </div>
 
           <div className="w-full sm:w-auto">
-            <h2 className="mb-7.5 text-custom-1 font-medium text-dark lg:text-right">
+            {/* <h2 className="mb-7.5 text-custom-1 font-medium text-dark lg:text-right">
               Download App
-            </h2>
+            </h2> */}
 
-            <p className="lg:text-right text-custom-sm mb-4">
+            {/* <p className="lg:text-right text-custom-sm mb-4">
               Save $3 With App & New User only
-            </p>
+            </p> */}
 
-            <ul className="flex flex-col lg:items-end gap-3">
+            {/* <ul className="flex flex-col lg:items-end gap-3">
               <li>
                 <a
                   className="inline-flex items-center gap-3 py-[9px] pl-4 pr-7.5 text-white rounded-md bg-dark ease-out duration-200 hover:bg-opacity-95"
@@ -327,7 +327,7 @@ const Footer = () => {
                   </div>
                 </a>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
         {/* <!-- footer menu end --> */}
