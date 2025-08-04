@@ -1,10 +1,9 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  // Vercel optimizations
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Allows Prisma client to be bundled and run on Vercel's serverless environment
   serverExternalPackages: ['@prisma/client'],
-  
-  // Image optimization for Vercel
+
+  // Next.js Image Optimization — adjust remotePatterns as needed
   images: {
     remotePatterns: [
       {
@@ -17,6 +16,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
+  // Optionally enable React strict mode for better debugging (recommended)
+  reactStrictMode: true,
+
+  // You can add more custom Webpack configs here if needed, but
+  // avoid absolute Windows paths to keep it cross-platform compatible
 };
 
-export default nextConfig;
+module.exports = nextConfig;
